@@ -1,13 +1,39 @@
-<div class="fixed top-0 right-0 left-0 z-50 w-full px-10">
+<div class="fixed top-0 right-0 left-0 z-50 w-full px-10 text-white">
     <div class="h-16 flex justify-between items-center">
         <div>
-            <a class="text-[2vw] font-semibold" routerLink="/">Cloth Shop</a>
+            <a class="text-[2vw] font-semibold uppercase" routerLink="/">Cloth Garrage</a>
         </div>
         <div class="flex items-center">
             <div class="flex gap-5">
-                <a routerLink="/">Home</a>
-                <button (click)="openNavbarContent('men')" mat-button>Men</button>
-                <button (click)="openNavbarContent('women')" mat-button>Women</button>
+                <a class="nav-link" routerLink="/">Home</a>
+                <button class="nav-link" (click)="openNavbarContent('men')" mat-button
+                    (click)="toggleMenMenu()">Men</button>
+                <div
+                    class="submenu-wrap absolute top-[100%] right-[42%] w-[200px] bg-black text-[#f5f5f5] rounded-[6px]">
+                    @if(isMenMenuOpen){
+                    <div class="submenu pb-2 pt-2 m-[10px]">
+                        <div class="info flex items-center flex-col justify-between bottom-[100%]">
+                            <button class="pb-2 opacity-[0.9] hover:opacity-[1]">Men's Top Wear</button>
+                            <button class="pb-2 opacity-[0.9] hover:opacity-[1]">Men's Bottom Wear</button>
+                        </div>
+                    </div>
+                    }
+                </div>
+
+                <button class="nav-link" (click)="openNavbarContent('women')" mat-button
+                    (click)="toggleWomenMenu()">Women</button>
+                <div
+                    class="submenu-wrap absolute top-[100%] right-[37%] w-[200px] bg-black text-[#f5f5f5] rounded-[6px]">
+                    @if(isWomenMenuOpen){
+                    <div class="submenu pb-2 pt-2 m-[10px]">
+                        <div class="info flex items-center flex-col justify-between bottom-[100%]">
+                            <button class="pb-2 opacity-[0.9] hover:opacity-[1]">Women's Ethnic Wear</button>
+                            <button class="pb-2 opacity-[0.9] hover:opacity-[1]">Women's Western Wear</button>
+                            <button class="pb-2 opacity-[0.9] hover:opacity-[1]">Women's Choli</button>
+                        </div>
+                    </div>
+                    }
+                </div>
             </div>
         </div>
         <div class="flex items-center justify-items-center gap-5">

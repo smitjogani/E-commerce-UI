@@ -10,9 +10,19 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
 
   isMenuOpen : boolean = false;
+  isMenMenuOpen : boolean = false;
+  isWomenMenuOpen : boolean = false;
 
   toggleMenu():void{
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  toggleMenMenu():void{
+    this.isMenMenuOpen = !this.isMenMenuOpen;
+  }
+
+  toggleWomenMenu():void{
+    this.isWomenMenuOpen = !this.isWomenMenuOpen;
   }
 
   openNavbarContent(menu: any) {

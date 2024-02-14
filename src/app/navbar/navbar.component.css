@@ -1,0 +1,14 @@
+.nav-btn{
+    padding: 4px 16px;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    border: 1px solid transparent;
+}
+
+.nav-btn:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    transition: ease 0.3s;
+}

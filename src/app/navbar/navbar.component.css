@@ -1,3 +1,7 @@
+.main-nav{
+    backdrop-filter: blur(4px);
+}
+
 .nav-btn {
     padding: 4px 16px;
     background-color: black;
@@ -30,5 +34,5 @@
 
 .nav-link:hover:after {
     width: 80%;
-    background-color: black;
+    background-color: white;
 }

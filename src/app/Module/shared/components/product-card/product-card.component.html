@@ -1,1 +1,17 @@
-<p>product-card works!</p>
+<div class="product-card w-[15rem] m-3 transition-all cursor-pointer flex-col">
+    <div class="product-img h-[17vw]">
+        <img class="h-full w-full object-cover" [src]="product.imageUrl" alt="">
+    </div>
+    <div class="textPart p-3 bg-white">
+        <div class="">
+            <p class="opacity-80">{{product.brand}}</p>
+            <p>{{product.title}}</p>
+            <p class="text-gray-600">{{product.color}}</p>
+        </div>
+        <div class="flex space-x-2 items-center flex-wrap">
+            <p class="font-bold">₹{{product.discountedPrice}}</p>
+            <p class="text-gray-600 line-through">₹{{product.price}}</p>
+            <p>{{product.discountPersent}} <span class="text-green-500">{{product.disscount}}%</span></p>
+        </div>
+    </div>
+</div>

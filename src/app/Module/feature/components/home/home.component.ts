@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { HeroComponent } from "./hero/hero.component";
 import { HomeProductSliderComponent } from "./home-product-slider/home-product-slider.component";
 import { HomeBannerComponent } from "./home-banner/home-banner.component";
-import { menCloths } from '../../assets/data/Men/men_cloths';
-import { womenCloths } from '../../assets/data/Women/women_cloth';
+import { menCloths } from '../../../../../assets/data/Men/men_cloths';
+import { womenCloths } from '../../../../../assets/data/Women/women_cloth';
 
 @Component({
     selector: 'app-home',

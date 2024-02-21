@@ -1,14 +1,3 @@
-// export const color = [
-//     "White",
-//     "Black",
-//     "Red",
-//     "Blue",
-//     "Being",
-//     "Pink",
-//     "Green",
-//     "Yellow",
-// ];
-
 export const filter = [
     {
         id: "color",

@@ -1,3 +1,42 @@
-<div class="bg-[#ffbcee] h-screen">
-
+<div class="pt-16 p-5 mt-10">
+    <section class="lg:grid grid-cols-3 lg:gap-10">
+        <div class="col-span-2 flex items-center flex-col">
+            <img class="w-[40vw] h-[40vw] object-cover" src="https://img.freepik.com/premium-photo/cool-clothing-design-inspiration_1013366-467.jpg?size=626&ext=jpg&ga=GA1.1.584932749.1704827371&semt=ais_ai_generated"
+                alt="">
+        </div>
+        <div class="col-span-1 space-y-5 mt-2 lg:mt-0">
+            <div class="space-y-2">
+                <p class="font-semibold text-gray-600 text-lg">Rodester</p>
+                <p class="text-xl">Special Designer Shirt</p>
+            </div>
+            <div class="flex items-center space-x-5">
+                <p class="text-lg">₹591</p>
+                <p class="text-lg text-gray-600 line-through">₹1999</p>
+                <p class="text-green-400 font-semibold text-lg">49%</p>
+            </div>
+            <div class="">
+                <p class="text-lg font-semibold">Size</p>
+                <mat-radio-group class="space-x-5" aria-label="Select an option" [(ngModel)]="selectedSize">
+                    <mat-radio-button value="S"><span>S</span></mat-radio-button>
+                    <mat-radio-button value="M"><span>M</span></mat-radio-button>
+                    <mat-radio-button value="L"><span>L</span></mat-radio-button>
+                    <mat-radio-button value="XL"><span>XL</span></mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div>
+                <button (click)="handleAddToCart()" class="cartBtn">Add to Cart</button>
+            </div>
+            <div class="flex flex-wrap">
+                <p class="text-gray-600">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio architecto quidem necessitatibus totam explicabo! Consequatur, dolore rem consectetur distinctio veritatis provident fugiat placeat?</p>
+            </div>
+        </div>
+    </section>
+    <section class="mt-5">
+        <h1 class="py-5 text-gray-400">Related Products</h1>
+        <div class="flex flex-wrap justify-around">
+            <div *ngFor="let item of relatedProducts">  
+                <app-product-card [product]="item"/>
+            </div>
+        </div>
+    </section>
 </div>

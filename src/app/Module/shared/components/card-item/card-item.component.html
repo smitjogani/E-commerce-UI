@@ -20,11 +20,17 @@
     <div class="flex items-center lg:space-x-10 pt-4 justify-between">
         <div class="flex items-center space-x-2">
             <div class="btn-container">
-                <button (click)="updateCartItem(-1)" [disabled]="true" class="bg-black text-white w-8 h-8 rounded-full text-[22px] flex items-center justify-center">-</button>
+                <button (click)="updateCartItem(-1)" [disabled]="true" class="bg-black text-white w-8 h-8 rounded-full text-[29px] flex items-center justify-center">-</button>
             </div>
+
+            <span class="py-1 px-2 flex items-center justify-center">1</span>
+
             <div class="btn-container">
                 <button (click)="updateCartItem(1)" [disabled]="false" class="bg-black text-white w-8 h-8 rounded-full text-[22px] flex items-center justify-center">+</button>
             </div>
         </div>
+
+        <button class="btn" (click)="removeCartItem()">Remove</button>
+
     </div>
 </div>

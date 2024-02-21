@@ -11,4 +11,8 @@ export class CardItemComponent {
   updateCartItem(num:Number){
     console.log(num);
   }
+
+  removeCartItem(){
+    console.log("Remove Cart Item")
+  }
 }

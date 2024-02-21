@@ -4,13 +4,14 @@ import { AddressCardComponent } from "../../../../shared/components/address-card
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDivider } from '@angular/material/divider';
 
 @Component({
   selector: 'app-address-form',
   standalone: true,
   templateUrl: './address-form.component.html',
   styleUrl: './address-form.component.css',
-  imports: [CommonModule, AddressCardComponent, FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule]
+  imports: [CommonModule, AddressCardComponent, FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule,MatDivider ]
 })
 export class AddressFormComponent {
 
@@ -28,12 +29,13 @@ export class AddressFormComponent {
     mobile: ["", Validators.required],
   })
 
-  handleSubmit() {
+  handlecreateOrder(item: any) {
 
   }
 
-  handlecreateOrder(item: any) {
-
+  handleSubmit = ()=> {
+    const formValue = this.myForm.value;
+    console.log("form data", formValue);
   }
 
 }

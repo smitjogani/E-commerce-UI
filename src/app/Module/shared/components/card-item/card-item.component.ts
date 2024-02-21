@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-item',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './card-item.component.html',
   styleUrl: './card-item.component.css'
 })
 export class CardItemComponent {
-  updateCartItem(num:Number){
+
+  @Input() showButton:any;
+
+  updateCartItem(num: Number) {
     console.log(num);
   }
 
-  removeCartItem(){
+  removeCartItem() {
     console.log("Remove Cart Item")
   }
 }

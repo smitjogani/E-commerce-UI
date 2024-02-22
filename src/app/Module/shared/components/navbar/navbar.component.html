@@ -69,7 +69,7 @@
                         @if(isMenuOpen){
                         <div class="submenu pb-2 pt-2 m-[10px]">
                             <div class="info flex items-center flex-col justify-between bottom-[100%]">
-                                <button class="pb-2 hover:text-[#fbff1c]">Order</button>
+                                <button class="pb-2 hover:text-[#fbff1c]" (click)="navigateToCart('account/orders')">Order</button>
                                 <button class="pb-2  hover:text-[#36d5e3]">Profile</button>
                                 <button class="hover:hover:text-[#de7c31]">Logout</button>
                             </div>

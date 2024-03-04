@@ -8,7 +8,7 @@
     background-color: black;
     color: white;
     border-radius: 6px;
-    border: 1px solid transparent;
+    border: 1px solid white;
 }
 
 .nav-btn:hover {

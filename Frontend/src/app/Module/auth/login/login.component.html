@@ -1,0 +1,40 @@
+<div>
+  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+    <div class="flex items-center justify-center mt-3">
+      <p class="font-semibold text-3xl flex gap-0 cursor-pointer">
+        <span class="text-[#de7c31] hover:text-[#36d5e3]">L</span>
+        <span class="text-[#f026b7] hover:text-[#fbff1c]">o</span>
+        <span class="text-[#36d5e3] hover:text-[#de7c31]">g</span>
+        <span class="text-[#2be03a] hover:text-[#f026b7]">i</span>
+        <span class="text-[#de7c31] hover:text-[#2be03a]">n</span>
+      </p>
+    </div>
+
+    <div class="p-5">
+      <mat-form-field class="w-full">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required email />
+        <mat-error *ngIf="loginForm.controls['email'].hasError('required')"
+          >Email is required</mat-error
+        >
+        <mat-error *ngIf="loginForm.controls['email'].hasError('email')"
+          >Enter valid email</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field class="w-full">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" required password />
+        <mat-error *ngIf="loginForm.controls['password'].hasError('password')"
+          >Password is required</mat-error
+        >
+        <mat-error *ngIf="loginForm.controls['password'].hasError('minlength')"
+          >Password should be 8 character long</mat-error
+        >
+      </mat-form-field>
+      <div>
+        <button class="btn">Login</button>
+      </div>
+    </div>
+  </form>
+</div>

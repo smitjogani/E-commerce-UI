@@ -10,6 +10,7 @@ import {
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Store } from '@ngrx/store';
+import { AuthService } from '../../../State/Auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -25,7 +26,11 @@ import { Store } from '@ngrx/store';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private formBuilder: FormBuilder, private store: Store) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private store: Store,
+    private authService: AuthService
+  ) {}
 
   loginForm: FormGroup = this.formBuilder.group({
     firstName: ['', [Validators.required]],
@@ -37,6 +42,7 @@ export class LoginComponent {
   submitForm(): void {
     if (this.loginForm.valid) {
       console.log('Login Data : ', this.loginForm.value);
+      this.authService.login(this.loginForm.value);
     }
   }
 }

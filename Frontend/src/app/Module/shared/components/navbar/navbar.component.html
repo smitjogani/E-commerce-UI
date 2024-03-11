@@ -18,7 +18,7 @@
         </div>
         <div class="flex items-center">
             <div class="flex gap-5">
-                <a class="nav-link" routerLink="/">Home</a>
+                <a class="nav-link" routerLink="/" (click)="navigateHome('/')">Home</a>
                 <button class="nav-link" (click)="openNavbarContent('men')" mat-button
                     (click)="toggleMenMenu()">Men</button>
                 <div
@@ -79,14 +79,13 @@
                 </div>
             </div>
             }
-            <!-- @if(!true){ -->
-            <button (click)="handleOpenLoginModel()" class="nav-btn" *ngIf="true" >
+            <button (click)="handleOpenLoginModel('login')" class="nav-btn" *ngIf="true" >
                 Login
             </button>
-            <button (click)="handleSignUpModel()" class="nav-btn" *ngIf="true">
+            <button (click)="handleSignUpModel('register')" class="nav-btn" *ngIf="true">
                 Signup
             </button>
-            <!-- } -->
+
         </div>
     </div>
 </div>

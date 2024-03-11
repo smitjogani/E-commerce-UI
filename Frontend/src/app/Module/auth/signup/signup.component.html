@@ -1,6 +1,6 @@
-<div>
-  <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
-    <div class="flex items-center justify-center mt-3">
+<div class="flex items-center justify-between h-screen">
+  <form [formGroup]="signupForm" (ngSubmit)="submitForm()" class="flex flex-col w-[30vw] bg-[#f5f5f5] translate-x-[120%] rounded-[5px] shadow-md mt-14">
+    <div class="flex items-center justify-center mt-2">
       <p class="font-semibold text-3xl flex gap-0 cursor-pointer">
         <span class="text-[#de7c31] hover:text-[#36d5e3]">S</span>
         <span class="text-[#f026b7] hover:text-[#fbff1c]">i</span>
@@ -53,6 +53,7 @@
       <div>
         <button class="btn">Signup</button>
       </div>
+      <p class="pt-5 translate-x-[25%]">already registered? <span (click)="navigateLogin('login')" class="cursor-pointer text-blue-700">Login</span></p>
     </div>
   </form>
 </div>

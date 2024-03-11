@@ -41,17 +41,19 @@ export class NavbarComponent {
     this.router.navigate([path]);
   }
 
-  handleOpenLoginModel = () => {
-    this.dialog.open(LoginComponent, {
-      width: '400px',
-      disableClose: false,
-    });
+  handleOpenLoginModel = (path:any) => {
+    // this.dialog.open(LoginComponent, {
+    //   width: '400px',
+    //   disableClose: false,
+    // });
+    this.router.navigate([path]);
   };
 
-  handleSignUpModel = () => {
-    this.dialog.open(SignupComponent, {
-      width: '400px',
-      disableClose: false,
-    });
+  handleSignUpModel = (path:any) => {
+    // this.dialog.open(SignupComponent, {
+    //   width: '400px',
+    //   disableClose: false,
+    // });
+    this.router.navigate([path]);
   };
 }

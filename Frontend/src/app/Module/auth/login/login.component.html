@@ -1,5 +1,5 @@
-<div>
-  <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+<div class="flex items-center justify-between h-screen">
+  <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()" class="flex flex-col w-[30vw] bg-[#f5f5f5] translate-x-[120%] rounded-[5px] shadow-md">
     <div class="flex items-center justify-center mt-3">
       <p class="font-semibold text-3xl flex gap-0 cursor-pointer">
         <span class="text-[#de7c31] hover:text-[#36d5e3]">L</span>
@@ -35,6 +35,7 @@
       <div>
         <button class="btn">Login</button>
       </div>
+      <p class="pt-5 translate-x-[20%]">don't have account? <span (click)="navigateReg('register')" class="cursor-pointer text-blue-700">Register</span></p>
     </div>
   </form>
 </div>

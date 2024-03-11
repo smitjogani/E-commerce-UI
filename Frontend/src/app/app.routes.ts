@@ -9,16 +9,26 @@ import { PaymentSuccessComponent } from './Module/feature/components/payment-suc
 import { OrderComponent } from './Module/feature/components/order/order.component';
 import { OrderDetailsComponent } from './Module/feature/components/order-details/order-details.component';
 import { AdminRoutingModule } from './Module/admin/admin-routing.module';
+import { LoginComponent } from './Module/auth/login/login.component';
+import { SignupComponent } from './Module/auth/signup/signup.component';
 
 export const routes: Routes = [
-    { 'path': 'admin', loadChildren: () => import("./Module/admin/admin-routing.module").then(m => AdminRoutingModule) },
-    { 'path': '', component: HomeComponent },
-    { 'path': 'cart', component: CartComponent },
-    { 'path': 'product-details/:id', component: ProductDetailsComponent },
-    { 'path': 'checkout', component: CheckoutComponent },
-    { 'path': 'checkout/payment/:id', component: PaymentComponent },
-    { 'path': 'payment-success', component: PaymentSuccessComponent },
-    { 'path': 'account/orders', component: OrderComponent },
-    { 'path': 'order/:id', component: OrderDetailsComponent },
-    { 'path': ':levelOne/:levelTwo', component: ProductsComponent }
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./Module/admin/admin-routing.module').then(
+        (m) => AdminRoutingModule
+      ),
+  },
+  { path: '', component: HomeComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: SignupComponent },
+  { path: 'product-details/:id', component: ProductDetailsComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout/payment/:id', component: PaymentComponent },
+  { path: 'payment-success', component: PaymentSuccessComponent },
+  { path: 'account/orders', component: OrderComponent },
+  { path: 'order/:id', component: OrderDetailsComponent },
+  { path: ':levelOne/:levelTwo', component: ProductsComponent },
 ];

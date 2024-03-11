@@ -7,9 +7,8 @@ import { HomeComponent } from './Module/feature/components/home/home.component';
 import { NavbarComponent } from './Module/shared/components/navbar/navbar.component';
 import { FooterComponent } from './Module/shared/components/footer/footer.component';
 import { ProductsComponent } from './Module/feature/components/products/products.component';
-import { StoreModule } from '@ngrx/store';
-import { authReducer } from './State/Auth/auth.reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -26,8 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     ProductsComponent,
     RouterOutlet,
-    HttpClientModule
-    // StoreModule.forRoot({auth:authReducer})
+    HttpClientModule,
   ],
 })
 export class AppComponent {

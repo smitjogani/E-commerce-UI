@@ -1,16 +1,20 @@
-import { Injectable } from '@angular/core';
-import { BASE_API_URL } from '../../Config/api';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { BASE_API_URL } from '../../Config/api';
 import { catchError, map, of } from 'rxjs';
-import {loginFailure, loginSuccess, registerFailure, registerSuccess } from './auth.actions';
+import {
+  loginFailure,
+  loginSuccess,
+  registerFailure,
+  registerSuccess,
+} from './auth.actions';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private api_url = BASE_API_URL + '/auth';
-
   constructor(private http: HttpClient, private store: Store) {}
 
   login(loginData: any) {
@@ -34,7 +38,7 @@ export class AuthService {
           );
         })
       )
-      .subscribe((action) => {
+      .subscribe((action: any) => {
         this.store.dispatch(action);
       });
   }

@@ -11,6 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../State/Auth/auth.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
@@ -21,6 +23,7 @@ import { Router } from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
@@ -29,7 +32,8 @@ export class SignupComponent {
   constructor(
     private formBuilder: FormBuilder,
     private store: Store,
-    private router: Router
+    private router: Router, 
+    private authService: AuthService
   ) {}
 
   signupForm: FormGroup = this.formBuilder.group({
@@ -41,6 +45,7 @@ export class SignupComponent {
 
   submitForm(): void {
     if (this.signupForm.valid) {
+      this.authService.register(this.signupForm.value);
       console.log('Signup Data : ', this.signupForm.value);
     }
   }

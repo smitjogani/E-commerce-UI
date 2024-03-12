@@ -42,18 +42,18 @@ export class NavbarComponent {
   }
 
   handleOpenLoginModel = (path:any) => {
-    // this.dialog.open(LoginComponent, {
-    //   width: '400px',
-    //   disableClose: false,
-    // });
-    this.router.navigate([path]);
+    this.dialog.open(LoginComponent, {
+      width: '400px',
+      disableClose: false,
+    });
+    // this.router.navigate([path]);
   };
 
   handleSignUpModel = (path:any) => {
-    // this.dialog.open(SignupComponent, {
-    //   width: '400px',
-    //   disableClose: false,
-    // });
-    this.router.navigate([path]);
+    this.dialog.open(SignupComponent, {
+      width: '400px',
+      disableClose: false,
+    });
+    // this.router.navigate([path]);
   };
 }

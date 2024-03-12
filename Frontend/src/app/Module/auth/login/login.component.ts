@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../State/Auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,8 @@ export class LoginComponent {
   constructor(
     private formBuilder: FormBuilder,
     private store: Store,
-    private router:Router
+    private router: Router,
+    private authbuilder: AuthService
   ) {}
 
   loginForm: FormGroup = this.formBuilder.group({
@@ -39,11 +41,12 @@ export class LoginComponent {
 
   submitLoginForm(): void {
     if (this.loginForm.valid) {
+      this.authbuilder.login(this.loginForm.value);
       console.log('Login Data : ', this.loginForm.value);
     }
   }
 
-  navigateReg(path: any){
+  navigateReg(path: any) {
     this.router.navigate([path]);
   }
 }

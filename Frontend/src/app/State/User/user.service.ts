@@ -21,7 +21,7 @@ export class userService {
 
   getUserProfile() {
     return this.http
-      .get(`${this.api_url}/profile`, { headers: this.headers })
+      .get(`${this.api_url}/users/profile`, { headers: this.headers })
       .pipe(
         map((user: any) => {
           console.log('User Profile geted ', user);

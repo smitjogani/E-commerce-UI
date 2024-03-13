@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,7 +8,9 @@ import { NavbarComponent } from './Module/shared/components/navbar/navbar.compon
 import { FooterComponent } from './Module/shared/components/footer/footer.component';
 import { ProductsComponent } from './Module/feature/components/products/products.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
+import { Store, StoreModule, select } from '@ngrx/store';
+import { AppState } from './Models/Appstate';
+import { userService } from './State/User/user.service';
 
 @Component({
   selector: 'app-root',
@@ -30,4 +32,19 @@ import { StoreModule } from '@ngrx/store';
 })
 export class AppComponent {
   title = 'clothshop';
+
+  constructor(
+    private router: Router,
+    private userService: userService,
+    private store: Store<AppState>
+  ) {}
+
+  ngOnInit() {
+    if (localStorage.getItem('jwt')) this.userService.getUserProfile();
+
+    this.store.pipe(select((store) => store.auth)).subscribe((user) => {
+      this.userService.getUserProfile();
+      console.log("store", this.store);
+    });
+  }
 }

@@ -42,7 +42,7 @@ export class LoginComponent {
   submitLoginForm(): void {
     if (this.loginForm.valid) {
       this.authbuilder.login(this.loginForm.value);
-      console.log('Login Data : ', this.loginForm.value);
+      // console.log('Login Data : ', this.loginForm.value);
     }
   }
 

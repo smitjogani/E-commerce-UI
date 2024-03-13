@@ -12,7 +12,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../State/Auth/auth.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
@@ -37,8 +37,8 @@ export class SignupComponent {
   ) {}
 
   signupForm: FormGroup = this.formBuilder.group({
-    firstname: ['', [Validators.required]],
-    lastname: ['', [Validators.required]],
+    firstName: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
   });
@@ -46,7 +46,7 @@ export class SignupComponent {
   submitForm(): void {
     if (this.signupForm.valid) {
       this.authService.register(this.signupForm.value);
-      console.log('Signup Data : ', this.signupForm.value);
+      // console.log('Signup Data : ', this.signupForm.value);
     }
   }
 

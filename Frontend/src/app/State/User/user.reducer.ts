@@ -3,6 +3,7 @@ import {
   getUserProfile,
   getUserProfileFailure,
   getUserProfileSuccess,
+  logoutSuccess,
 } from './user.action';
 
 const initialState = {
@@ -24,5 +25,6 @@ export const userReducer = createReducer(
     ...state,
     loading: true,
     error: error,
-  }))
+  })),
+  on(logoutSuccess, () => initialState)
 );

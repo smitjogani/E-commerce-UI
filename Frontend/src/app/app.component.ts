@@ -34,7 +34,6 @@ export class AppComponent {
   title = 'clothshop';
 
   constructor(
-    private router: Router,
     private userService: userService,
     private store: Store<AppState>
   ) {}
@@ -42,9 +41,9 @@ export class AppComponent {
   ngOnInit() {
     if (localStorage.getItem('jwt')) this.userService.getUserProfile();
 
-    this.store.pipe(select((store) => store.auth)).subscribe((user) => {
+    this.store.pipe(select((store) => store.auth)).subscribe(() => {
       this.userService.getUserProfile();
-      console.log("store", this.store);
+      // console.log('store', this.store);
     });
   }
 }

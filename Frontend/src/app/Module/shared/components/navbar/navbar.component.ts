@@ -33,10 +33,11 @@ export class NavbarComponent {
 
     this.store.pipe(select((store) => store.user)).subscribe((user) => {
       this.userProfile = user.userProfile;
-      if(user.userProfile){
+      if (user.userProfile) {
         this.dialog.closeAll();
       }
     });
+    console.log(this.userProfile);
   }
 
   toggleMenu(): void {
@@ -76,4 +77,8 @@ export class NavbarComponent {
     });
     // this.router.navigate([path]);
   };
+
+  handleLogout() {
+    this.userService.logout();
+  }
 }

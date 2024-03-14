@@ -17,32 +17,6 @@ export class AuthService {
   private api_url = BASE_API_URL + '/auth';
   constructor(private http: HttpClient, private store: Store) {}
 
-  login(loginData: any) {
-    return this.http
-      .post(`${this.api_url}/login`, loginData)
-      .pipe(
-        map((user: any) => {
-          console.log(user);
-          if (user.jwt) {
-            localStorage.setItem('jwt', user.jwt);
-          }
-          return loginSuccess({ user });
-        }),
-        catchError((error) => {
-          return of(
-            loginFailure(
-              error.response && error.response.data.message
-                ? error.response.data.message
-                : error.message
-            )
-          );
-        })
-      )
-      .subscribe((action: any) => {
-        this.store.dispatch(action);
-      });
-  }
-
   register(user: any) {
     return this.http
       .post(`${this.api_url}/signup`, user)
@@ -65,6 +39,32 @@ export class AuthService {
         })
       )
       .subscribe((action) => {
+        this.store.dispatch(action);
+      });
+  }
+  
+  login(loginData: any) {
+    return this.http
+      .post(`${this.api_url}/login`, loginData)
+      .pipe(
+        map((user: any) => {
+          console.log(user);
+          if (user.jwt) {
+            localStorage.setItem('jwt', user.jwt);
+          }
+          return loginSuccess({ user });
+        }),
+        catchError((error) => {
+          return of(
+            loginFailure(
+              error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message
+            )
+          );
+        })
+      )
+      .subscribe((action: any) => {
         this.store.dispatch(action);
       });
   }

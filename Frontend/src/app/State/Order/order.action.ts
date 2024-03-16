@@ -30,7 +30,7 @@ export const getOrderByIdFailure = createAction(
   props<{ error: any }>()
 );
 
-export const getOrderHistory = createAction(
+export const getOrderHistoryRequest = createAction(
   '[Order] get order history request'
 );
 

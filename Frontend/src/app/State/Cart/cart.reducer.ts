@@ -17,14 +17,14 @@ import { state } from '@angular/animations';
 
 export default interface CartState {
   cartItems: any[];
-  loadging: boolean;
+  loading: boolean;
   error: any;
   cart: any;
 }
 
 const initialState: CartState = {
   cartItems: [],
-  loadging: false,
+  loading: false,
   error: null,
   cart: null,
 };
@@ -38,7 +38,7 @@ export const cartReducer = createReducer(
     updateCartItemRequest,
     (state) => ({
       ...state,
-      loadging: true,
+      loading: true,
       error: null,
     })
   ),
@@ -57,7 +57,7 @@ export const cartReducer = createReducer(
 
   on(getCartRequest, (state) => ({
     ...state,
-    loadging: true,
+    loading: true,
     error: null,
   })),
 
